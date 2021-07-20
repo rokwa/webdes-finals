@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="assets/css/style-order.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Vitaly Tea | Order</title>
+
+    <script>
+        const items = ["Ginger Tea", "Hot Choco", "Coffee", "Green Tea", "Chai", 
+                      "Fruit Juice", "Iced Tea", "Mint Lemonade", "Mexican Punch",
+                      "Iced Coffee", "Espresso Slushie", "Raspberry Fizz", "HBLT",
+                      "Classic Roast Beef", "Ultimate Roast Beef", "Chicken Pesto",
+                      "Bacon Chicken", "Classic Tuna", "Bacon & Egg", "BBQ Chicken",
+                      "BBQ Tofu", "Veggie Delight"]
+
+        const prices = [99.99, 125.00, 125.00, 130.00, 120.00, 120.00, 120.00, 110.00,
+                        120.00, 110.00, 110.00]
+
+        function add(index, price){
+          i = parseInt(document.getElementById(index).innerHTML);
+          i++;
+          document.getElementById(index).innerHTML = i;
+          updateCart();
+          updateTotal(price, 1);
+        }
+
+        function sub(index, price){
+          i = parseInt(document.getElementById(index).innerHTML);
+
+          if (i == 0){
+            return;
+          }
+
+          i--;
+          document.getElementById(index).innerHTML = i;
+          updateCart();
+          updateTotal(price, 0)
+        }
+
+        function updateTotal(price, or){
+          i = parseFloat(document.getElementById('totalprice').innerHTML);
+
+          if (or == 1){
+            i += price;
+            document.getElementById('totalprice').innerHTML = i.toFixed(2);
+          }
+          else{
+            i -= price;
+            document.getElementById('totalprice').innerHTML = i.toFixed(2);
+          }
+        }
+
+        function updateCart(){
+          const listlist = []
+
+          listlist.push(document.getElementById('qty1').innerHTML);
+          listlist.push(document.getElementById('qty2').innerHTML);
+          listlist.push(document.getElementById('qty3').innerHTML);
+          listlist.push(document.getElementById('qty4').innerHTML);
+          listlist.push(document.getElementById('qty5').innerHTML);
+          listlist.push(document.getElementById('qty6').innerHTML);
+          listlist.push(document.getElementById('qty7').innerHTML);
+          listlist.push(document.getElementById('qty8').innerHTML);
+          listlist.push(document.getElementById('qty9').innerHTML);
+          listlist.push(document.getElementById('qty10').innerHTML);
+          listlist.push(document.getElementById('qty11').innerHTML);
+          listlist.push(document.getElementById('qty12').innerHTML);
+          listlist.push(document.getElementById('qty13').innerHTML);
+          listlist.push(document.getElementById('qty14').innerHTML);
+          listlist.push(document.getElementById('qty15').innerHTML);
+          listlist.push(document.getElementById('qty16').innerHTML);
+          listlist.push(document.getElementById('qty17').innerHTML);
+          listlist.push(document.getElementById('qty18').innerHTML);
+          listlist.push(document.getElementById('qty19').innerHTML);
+          listlist.push(document.getElementById('qty20').innerHTML);
+          listlist.push(document.getElementById('qty21').innerHTML);
+          listlist.push(document.getElementById('qty22').innerHTML);
+
+          document.getElementById("cart").innerHTML = "";
+
+          for (let i = 0; i < 22; i++) {
+            if (listlist[i] > 0){
+              if (i < 12){
+                var node = document.createElement("DIV");
+                var textnode = document.createTextNode("₱" + prices[0] + " - " + items[i] + " x" + listlist[i]);
+                node.appendChild(textnode);
+                document.getElementById("cart").appendChild(node);
+              }
+              else{
+                var node = document.createElement("DIV");
+                var textnode = document.createTextNode("₱" + prices[i-11] + " - " + items[i] + " x" + listlist[i]);
+                node.appendChild(textnode);
+                document.getElementById("cart").appendChild(node);
+              }
+            }
+          }
+        }
+    </script>
+  </head>
+<body>
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" alt="" width="150">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <a class="nav-link" href="index.html">
+		<li class="nav-item">
+          Home
+        </li>
+		</a>
+		<a class="nav-link" href="services.html">
+        <li class="nav-item">
+          Services
+        </li>
+		</a>
+        <a class="nav-link" href="menu.html">
+        <li class="nav-item">
+          Menu
+        </li>
+		</a>
+		<a class="nav-link active" href="order.html">
+        <li class="nav-item">
+          Order
+        </li>
+		</a>
+      
+      <a class="nav-link " href="about.html">
+        <li class="nav-item">
+          About
+        </li>
+		</a>
+		<a class="nav-link" href="contact.html">
+        <li class="nav-item">
+          Contact
+        </li>
+		</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+	
+<div class="head container-fluid">
+	<div>
+		<h1>Order</h1>
+	</div>
+	<p style="color: #35C6B5">Finally decided on something to eat?</p>
+</div>
+
+<div class="content_div">
+    <div class = "boxmain_shadow">
+        
+        <h2 style="color: #0E655D;">Order Form</h2>
+
+        <!--
+        <div class="row">
+            <div class="col">
+            <label for="warmdrink">Warm Drink:</label>
+            <select class="form-select" id="warmdrink" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            </div>
+
+            <div class="col">
+            <label for="warmdrink">Cold Drink:</label>
+            <select class="form-select" id="colddrink" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            </div>
+
+            <div class="col">
+                <label for="warmdrink">Sandwich:</label>
+                <select class="form-select" id="sandwich" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
+      -->
+
+      <h1 style="color: #35C6B5">Warm Drinks</h1>
+        <div id="service_line">
+            <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/hotgingertea.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Ginger Tea</h4>
+                          <div style="color: #35C6B5">Php 99.99</div><br>
+                          A person can drink ginger tea as a complementary remedy for nausea
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty1', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty1" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty1', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/hotchoco.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Hot Choco</h4>
+                          <div style="color: #35C6B5">Php 99.99</div><br>
+                          Hot chocolate, also known as hot cocoa or drinking &nbsp; chocolate, is a heated drink consisting of shaved chocolate
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty2', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty2" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty2', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/hotcoffee.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Coffee</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        Freshly brewed coffee
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty3', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty3" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty3', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/hotgreentea.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Green Tea</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        Green tea has been shown to improve blood flow and lower cholesterol
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty4', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty4" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty4', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/hotchai.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Chai</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        Pouring hot or boiling water over cured or fresh leaves of Camellia sinensis
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty5', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty5" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty5', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+            
+        </div>
+      
+      <br><br>
+      <h1 style="color: #35C6B5">Cold Drinks</h1>
+        <div id="service_line">
+
+            <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/fruitjuice.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Fruit Juice</h4>
+                          <div style="color: #35C6B5">Php 99.99</div><br>
+                          Any kind of juice from fruit
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty6', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty6" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty6', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/icedtea.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Iced Tea</h4>
+                          <div style="color: #35C6B5">Php 99.99</div><br>
+                          Tea that is cold
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty7', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty7" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty7', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/lemonade.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Mint Lemonade</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        A sweet drink made from lemons
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty8', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty8" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty8', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/punch.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Mexican Punch</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        Flavored water & sugar
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty9', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty9" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty9', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div id="ordercard">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/icedcoffee.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Iced Coffee</h4>
+                        <div style="color: #35C6B5">Php 99.99</div><br>
+                        Cold coffee usually with ice cubes or crushed ice
+                    </div>
+            </div>
+            <div id="orderqty">
+              <div class="row" style="text-align: center;">
+                <div class="col" onclick="sub('qty10', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                </div>
+                <div class="col">
+                  <h2 id="qty10" style="color: white; display: inline;">0</h2>
+                </div>
+                <div class="col" onclick="add('qty10', 99.99)" style="cursor: pointer;">
+                  <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+
+            <br><br>
+            <div id="service_line">
+
+            <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/EspressoSlushie.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Espresso Slushie</h4>
+                          <div style="color: #35C6B5">Php 99.99</div><br>
+                          Top a ginger ale–cranberry juice combo with scoops of raspberry sorbet
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty11', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty11" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty11', 99.99)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div id="ordercard">
+                <div id="plan_card">
+                    <div id="plan_card_bg" style="background-image: url('assets/fizz.jpg');"></div>
+                        <div id="card">
+                            <h4 style="display: inline;">Raspberry Fizz</h4>
+                            <div style="color: #35C6B5">Php 99.99</div><br>
+                            Pouring hot or boiling water over cured or fresh leaves of Camellia sinensis
+                        </div>
+                </div>
+                <div id="orderqty">
+                  <div class="row" style="text-align: center;">
+                    <div class="col" onclick="sub('qty12', 99.99)" style="cursor: pointer;">
+                      <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                    </div>
+                    <div class="col">
+                      <h2 id="qty12" style="color: white; display: inline;">0</h2>
+                    </div>
+                    <div class="col" onclick="add('qty12', 99.99)" style="cursor: pointer;">
+                      <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </div>  
+
+        <br><br><br>
+        <h1 style="color: #35C6B5">Sandwiches</h1>
+          <div id="service_line">
+  
+              <div id="ordercard">
+                <div id="plan_card">
+                    <div id="plan_card_bg" style="background-image: url('assets/sand1.jpg');"></div>
+                        <div id="card">
+                            <h4 style="display: inline;">HBLT</h4>
+                            <div style="color: #35C6B5">Php 125.00</div><br>
+                            Ham, Bacon, Lettuce and Tomatoes
+                        </div>
+                </div>
+                <div id="orderqty">
+                  <div class="row" style="text-align: center;">
+                    <div class="col" onclick="sub('qty13', 125.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                    </div>
+                    <div class="col">
+                      <h2 id="qty13" style="color: white; display: inline;">0</h2>
+                    </div>
+                    <div class="col" onclick="add('qty13', 125.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div id="ordercard">
+                <div id="plan_card">
+                    <div id="plan_card_bg" style="background-image: url('assets/sand2.png');"></div>
+                        <div id="card">
+                            <h4 style="display: inline;">Classic Roast Beef</h4>
+                            <div style="color: #35C6B5">Php 125.00</div><br>
+                            Classic Roast Beef is always the answer!
+                        </div>
+                </div>
+                <div id="orderqty">
+                  <div class="row" style="text-align: center;">
+                    <div class="col" onclick="sub('qty14', 125.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                    </div>
+                    <div class="col">
+                      <h2 id="qty14" style="color: white; display: inline;">0</h2>
+                    </div>
+                    <div class="col" onclick="add('qty14', 125.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/sand3.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Ultimate Roast Beef</h4>
+                          <div style="color: #35C6B5">Php 130.00</div><br>
+                          The ultimate favorite of every sandwich lovers
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty15', 130.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty15" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty15', 130.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+              </div>
+  
+              <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/sand4.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Chicken Pesto</h4>
+                          <div style="color: #35C6B5">Php 120.00</div><br>
+                          Awesome Chicken Pesto that will instantly be your favorite sandwich.
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty16', 120.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty16" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty16', 120.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+              </div>
+  
+              <div id="ordercard">
+              <div id="plan_card">
+                  <div id="plan_card_bg" style="background-image: url('assets/sand5.jpg');"></div>
+                      <div id="card">
+                          <h4 style="display: inline;">Bacon Chicken</h4>
+                          <div style="color: #35C6B5">Php 120.00</div><br>
+                          Glorious combination of Bacon, Chicken, Lettuce and Tomatoes
+                      </div>
+              </div>
+              <div id="orderqty">
+                <div class="row" style="text-align: center;">
+                  <div class="col" onclick="sub('qty17', 120.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                  </div>
+                  <div class="col">
+                    <h2 id="qty17" style="color: white; display: inline;">0</h2>
+                  </div>
+                  <div class="col" onclick="add('qty17', 120.00)" style="cursor: pointer;">
+                    <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+  
+              <br><br>
+              <div id="service_line">
+              <div id="ordercard">
+                <div id="plan_card">
+                    <div id="plan_card_bg" style="background-image: url('assets/sand6.png');"></div>
+                        <div id="card">
+                            <h4 style="display: inline;">Classic Tuna</h4>
+                            <div style="color: #35C6B5">Php 120.00</div><br>
+                            Try our Classic Tuna and have a light and fun snack.
+                        </div>
+                </div>
+                <div id="orderqty">
+                  <div class="row" style="text-align: center;">
+                    <div class="col" onclick="sub('qty18', 120.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                    </div>
+                    <div class="col">
+                      <h2 id="qty18" style="color: white; display: inline;">0</h2>
+                    </div>
+                    <div class="col" onclick="add('qty18', 120.00)" style="cursor: pointer;">
+                      <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                    </div>
+                  </div>
+                </div>
+                </div>
+  
+                <div id="ordercard">
+                  <div id="plan_card">
+                      <div id="plan_card_bg" style="background-image: url('assets/sand7.jpg');"></div>
+                          <div id="card">
+                              <h4 style="display: inline;">Bacon & Egg</h4>
+                              <div style="color: #35C6B5">Php 110.00</div><br>
+                              Make your tummy happy too by trying our yummy Bacon & Egg!
+                          </div>
+                  </div>
+                  <div id="orderqty">
+                    <div class="row" style="text-align: center;">
+                      <div class="col" onclick="sub('qty19', 110.00)" style="cursor: pointer;">
+                        <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                      </div>
+                      <div class="col">
+                        <h2 id="qty19" style="color: white; display: inline;">0</h2>
+                      </div>
+                      <div class="col" onclick="add('qty19', 110.00)" style="cursor: pointer;">
+                        <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div id="ordercard">
+                    <div id="plan_card">
+                        <div id="plan_card_bg" style="background-image: url('assets/sand8.jpg');"></div>
+                            <div id="card">
+                                <h4 style="display: inline;">BBQ Chicken</h4>
+                                <div style="color: #35C6B5">Php 120.00</div><br>
+                                Add a twist of BBQ to your typical chicken sandwich meal!
+                            </div>
+                    </div>
+                    <div id="orderqty">
+                      <div class="row" style="text-align: center;">
+                        <div class="col" onclick="sub('qty20', 120.00)" style="cursor: pointer;">
+                          <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                        </div>
+                        <div class="col">
+                          <h2 id="qty20" style="color: white; display: inline;">0</h2>
+                        </div>
+                        <div class="col" onclick="add('qty20', 120.00)" style="cursor: pointer;">
+                          <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+
+                    <div id="ordercard">
+                      <div id="plan_card">
+                          <div id="plan_card_bg" style="background-image: url('assets/sand9.jpg');"></div>
+                              <div id="card">
+                                  <h4 style="display: inline;">BBQ Tofu</h4>
+                                  <div style="color: #35C6B5">Php 110.00</div><br>
+                                  Barbecue Marinated Tofu with Lettuce and Tomatoes!
+                              </div>
+                      </div>
+                      <div id="orderqty">
+                        <div class="row" style="text-align: center;">
+                          <div class="col" onclick="sub('qty21', 110.00)" style="cursor: pointer;">
+                            <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                          </div>
+                          <div class="col">
+                            <h2 id="qty21" style="color: white; display: inline;">0</h2>
+                          </div>
+                          <div class="col" onclick="add('qty21', 110.00)" style="cursor: pointer;">
+                            <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+
+                      <div id="ordercard">
+                        <div id="plan_card">
+                            <div id="plan_card_bg" style="background-image: url('assets/sand10.jpg');"></div>
+                                <div id="card">
+                                    <h4 style="display: inline;">Veggie Delight</h4>
+                                    <div style="color: #35C6B5">Php 110.00</div><br>
+                                    Eating yummy while staying healthy with its freshly grilled veggie!
+                                </div>
+                        </div>
+                        <div id="orderqty">
+                          <div class="row" style="text-align: center;">
+                            <div class="col" onclick="sub('qty22', 110.00)" style="cursor: pointer;">
+                              <i class="fa fa-caret-left" style="font-size: 28px;"></i>
+                            </div>
+                            <div class="col">
+                              <h2 id="qty22" style="color: white; display: inline;">0</h2>
+                            </div>
+                            <div class="col" onclick="add('qty22', 110.00)" style="cursor: pointer;">
+                              <i class="fa fa-caret-right" style="font-size: 28px;"></i>
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+          </div>  
+
+        <br><br><br>
+        <h3 style="color: #0E655D; display: inline;">In your cart:</h3><br>
+        <div id="checker">
+          <p style="display: inline; color: gray; font-size: 20px;">Your items will be shown here</p>
+        </div>
+        <div id="cart">
+            
+        </div>
+
+        <br>
+        <h2 style="color: #0E655D; display: inline;">Total</h2><br>
+        <h2 style="color: #0E655D; display: inline;">₱</h2>
+        <h2 style="display: inline" id="totalprice">0</h2>
+
+        <br>
+        <div class="row">
+            <button class="order_button" onclick="orderplace()">Place order</button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close" style="float: right;">&times;</span>
+            <h1>Your order has been placed!</h1>
+            <div id="chu"></div>
+          </div>
+
+        </div>
+
+        <script>
+          var modal = document.getElementById("myModal");
+          var modal2 = document.getElementById("myModal2");
+          var span = document.getElementsByClassName("close")[0];
+          var content = document.getElementById("cart").innerHTML;
+
+          function orderplace(){
+            modal.style.display = "block";
+          }
+          
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+          </script>
+
+    </div>
+</div>
+
+
+		<div id="footer">
+			<div class="row">
+				<div class="col-md-1" style="height: auto">
+				</div>
+				<div class="col-md-3" style="height: auto; padding-right: 50px;">
+					<img src="" alt="" width="150"><h2>Vitaly Tea</h2><br><br>
+						<i class="fa fa-building"></i> P. Paredes St, Sampaloc, Manila, 1015 Metro Manila
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>ABOUT US</b></h5>
+					<a href="">FAQS</a><br>
+					<a href="">Terms and Conditions</a><br>
+					<a href="">Privacy Policy</a><br>
+					<a href="">Fair Use Policy</a><br>
+					<a href="">Sitemap</a>
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>CONTACT US</b></h5>
+					<a href="">Help and Support</a><br>
+					<a href="">Ask the Community</a><br>
+					<a href="">Store Locator</a><br>
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>Connect with us</b></h5>
+					Samsantech2020.com.ph<br><br>
+					Tel (632) 7730-2000<br>
+					Fax (632) 7739-0072<br><br>
+					+63 (2) 8511 5200<br><br>
+					http://www.VitalityTea.com.ph
+				</div>
+			</div>
+		</div>
+		
+		<div style="background-color: #0E655D; color: white; text-align: center; padding: 5px; font-size: 12px;">
+		© 2021 All Rights Reserved. Samsan Tech - Vitaly Tea.
+		</div>
+	</div>
+
+	</div>
+
+  </body>
+</html>

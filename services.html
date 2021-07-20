@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="assets/css/style-services.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Vitaly Tea | Services</title>
+
+    <script>
+        function loadpage(){
+			document.getElementById('container').innerHTML = document.getElementById('tab1').innerHTML;
+		}
+
+        function show(param_div_id) {
+			document.getElementById('container').innerHTML = document.getElementById(param_div_id).innerHTML;
+		}
+    </script>
+  </head>
+<body onload="loadpage()">
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" alt="" width="150">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <a class="nav-link" href="index.html">
+		<li class="nav-item">
+          Home
+        </li>
+		</a>
+		<a class="nav-link active" href="services.html">
+        <li class="nav-item">
+          Services
+        </li>
+		</a>
+        <a class="nav-link" href="menu.html">
+        <li class="nav-item">
+          Menu
+        </li>
+		</a>
+		<a class="nav-link" href="order.html">
+        <li class="nav-item">
+          Order
+        </li>
+		</a>
+      
+      <a class="nav-link " href="about.html">
+        <li class="nav-item">
+          About
+        </li>
+		</a>
+		<a class="nav-link" href="contact.html">
+        <li class="nav-item">
+          Contact
+        </li>
+		</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+	
+	<div class="head container-fluid">
+	<div>
+		<h1>Services</h1>
+	</div>
+	<p style="color: #35C6B5">Our services include digital printing, binding, laminating, and cutting.
+        <br>All the regular services you can find in a serious printing shop.</p>
+</div>
+
+<div id="container" style="padding: 20px 100px 0px 100px;"></div>
+
+<div class="content_div" id="tab1">
+    <div class = "boxmain_shadow">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 10px !important; background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <a class="nav-link active" href=#>
+                        <li class="nav-item">
+                          Digital Printing
+                        </li>
+                        </a>
+                    <a class="nav-link" href=# onclick="show('tab2')">
+                  <li class="nav-item">
+                    Binding
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab3')">
+                  <li class="nav-item">
+                    Laminating
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab4')">
+                  <li class="nav-item">
+                    Cutting
+                  </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <h1 style="color: #35C6B5">Paper Stock</h1>
+        <div id="service_line">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/p1.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Glossy</h4>
+                        <div style="color: #35C6B5">Php10.00/page</div><br>
+                        If you love the look of a shiny, high-gloss finish, a Glossy Poster Print is the way to go.
+                        The colours in your photo will pop and get the attention it deserves.
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/p2.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Matte</h4>
+                        <div style="color: #35C6B5">Php12.00/page</div><br>
+                        Whether you’re printing low contrast, high contrast images, or black and white portraits,
+                        when printed on matte, the details in your photo will look incredible.
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/p3.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Textured</h4>
+                        <div style="color: #35C6B5">Php18.00/page</div><br>
+                        3D effect is achieved by coating the desired areas in ink powder, then applying heat to create a raised effect.
+                        Making it look intricate.
+                    </div>
+            </div>
+        </div>
+
+        <h1 style="color: #35C6B5">Ink</h1>
+        <div id="service_line">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/i1.png');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">HP</h4>
+                        <div style="color: #35C6B5">See more...</div><br>
+                        Print superb quality documents and make a strong impression for your business. 
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/i2.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Epson</h4>
+                        <div style="color: #35C6B5">See more...</div><br>
+                        Industry-leading large format printers for photography, graphic arts, and commercial printing.
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/i3.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Canon</h4>
+                        <div style="color: #35C6B5">See more...</div><br>
+                        Quality ink that delivers professional colour for your Canon printer.
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="content_div" id="tab2">
+    <div class = "boxmain_shadow">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 10px !important; background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <a class="nav-link" href=# onclick="show('tab1')">
+                        <li class="nav-item">
+                          Digital Printing
+                        </li>
+                        </a>
+                    <a class="nav-link active" aria-current="page">
+                  <li class="nav-item">
+                    Binding
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab3')">
+                  <li class="nav-item">
+                    Laminating
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab4')">
+                  <li class="nav-item">
+                    Cutting
+                  </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div id="service_line">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/b1.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Saddle Stitch</h4>
+                        <div style="color: #35C6B5">Php2.00/page</div><br>
+                        a stitch made by placing the center of the fold across the saddle of the stitcher and
+                        driving wire staples through and clinching them on the inside
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/b2.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Heated Spine</h4>
+                        <div style="color: #35C6B5">Php5.00/page</div><br>
+                        Heat is applied to the adhesive-coated spine of a cover,
+                        activating the adhesive and allowing the pages to be bound within the wraparound cover.
+                    </div>
+            </div>
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/b3.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Wire</h4>
+                        <div style="color: #35C6B5">Php10.00/page</div><br>
+                        With this binding method, users insert their punched pages onto a "C" shaped spine
+                        and then use a wire closer to squeeze the spine until it is round.
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="content_div" id="tab3">
+    <div class = "boxmain_shadow">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 10px !important; background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <a class="nav-link" href=# onclick="show('tab1')">
+                        <li class="nav-item">
+                          Digital Printing
+                        </li>
+                        </a>
+                    <a class="nav-link" href=# onclick="show('tab2')">
+                  <li class="nav-item">
+                    Binding
+                  </li>
+                  </a>
+                  <a class="nav-link active" href=#>
+                  <li class="nav-item">
+                    Laminating
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab4')">
+                  <li class="nav-item">
+                    Cutting
+                  </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div id="service_line">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/l1.jpg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Laminating</h4>
+                        <div style="color: #35C6B5">Php30.00</div><br>
+                        Fast, easy lamination for the home, school and office make preserving and protecting simple.
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="content_div" id="tab4">
+    <div class = "boxmain_shadow">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 10px !important; background-color: white !important; padding: 20px 60px 20px 60px !important; position: relative !important">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <a class="nav-link" href=# onclick="show('tab1')">
+                        <li class="nav-item">
+                          Digital Printing
+                        </li>
+                        </a>
+                    <a class="nav-link" href=# onclick="show('tab2')">
+                  <li class="nav-item">
+                    Binding
+                  </li>
+                  </a>
+                  <a class="nav-link" href=# onclick="show('tab3')">
+                  <li class="nav-item">
+                    Laminating
+                  </li>
+                  </a>
+                  <a class="nav-link active" href=#>
+                  <li class="nav-item">
+                    Cutting
+                  </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+        <div id="service_line">
+            <div id="plan_card">
+                <div id="plan_card_bg" style="background-image: url('assets/c1.jpeg');"></div>
+                    <div id="card">
+                        <h4 style="display: inline;">Cutting</h4>
+                        <div style="color: #35C6B5">Free to use</div><br>
+                        Feel free to use our paper cutter for free!
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+		<div id="footer">
+			<div class="row">
+				<div class="col-md-1" style="height: auto">
+				</div>
+				<div class="col-md-3" style="height: auto; padding-right: 50px;">
+					<img src="" alt="" width="150"><h2>Vitaly Tea</h2><br><br>
+						<i class="fa fa-building"></i> P. Paredes St, Sampaloc, Manila, 1015 Metro Manila
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>ABOUT US</b></h5>
+					<a href="">FAQS</a><br>
+					<a href="">Terms and Conditions</a><br>
+					<a href="">Privacy Policy</a><br>
+					<a href="">Fair Use Policy</a><br>
+					<a href="">Sitemap</a>
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>CONTACT US</b></h5>
+					<a href="">Help and Support</a><br>
+					<a href="">Ask the Community</a><br>
+					<a href="">Store Locator</a><br>
+				</div>
+				<div class="col-md-2" style="padding-top:60px; height: auto">
+					<h5><b>Connect with us</b></h5>
+					Samsantech2020.com.ph<br><br>
+					Tel (632) 7730-2000<br>
+					Fax (632) 7739-0072<br><br>
+					+63 (2) 8511 5200<br><br>
+					http://www.VitalityTea.com.ph
+				</div>
+			</div>
+		</div>
+		
+		<div style="background-color: #0E655D; color: white; text-align: center; padding: 5px; font-size: 12px;">
+		© 2021 All Rights Reserved. Samsan Tech - Vitaly Tea.
+		</div>
+	</div>
+
+	</div>
+
+  </body>
+</html>

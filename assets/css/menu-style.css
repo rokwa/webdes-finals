@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
+* {
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  top: 0;
+  left: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+
+/**/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  align-items: center !important;
+}
+
+li {
+  padding: 0px 15px 0px 15px;
+  text-align: center;
+  float: left;
+  align-items: center !important;
+}
+
+ul a {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  display: block;
+  color: #262626 !important;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul a:hover:not(.active) {
+  border-radius: 500px;
+  background-color: #0e655d !important;
+  color: white !important;
+}
+
+.active {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  border-radius: 500px;
+  color: white !important;
+  background-color: #0e655d !important;
+}
+
+.primary {
+  transition: 0.2s;
+  border-radius: 500px;
+  color: white;
+  background-color: #1d439c;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid #1d439c;
+}
+
+.primary:hover {
+  transition: 0.2s;
+  border-radius: 500px;
+  color: #1d439c;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid #1d439c;
+}
+
+.primary2 {
+  transition: 0.2s;
+  border-radius: 3px;
+  color: white;
+  background-color: #1d439c;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid #1d439c;
+}
+
+.primary2:hover {
+  transition: 0.2s;
+  border-radius: 3px;
+  color: #1d439c;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid #1d439c;
+}
+
+.white {
+  transition: 0.5s;
+  border-radius: 500px;
+  color: gray;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid gray;
+}
+
+.white:hover {
+  transition: 0.5s;
+  border-radius: 500px;
+  color: black;
+  background-color: white;
+  padding: 10px 30px 10px 30px;
+  font-size: 18px;
+  border: 2px solid black;
+}
+
+.parallax-container {
+  height: 200px;
+}
+/* MENU PAGE */
+.menu-title h1 {
+  margin-top: 2%;
+  margin-left: 5%;
+  letter-spacing: 0.2em;
+  color: #0e655d;
+  font-family: "Quicksand";
+  font-weight: bold;
+  font-size: 73px;
+}
+.menu-bar {
+  margin-left: 5%;
+  width: 75%;
+  overflow: auto;
+}
+.menu-bar a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 0;
+  transition: 0.5s;
+  color: #212529;
+  font-size: 50px;
+  font-family: "Quicksand";
+  font-weight: normal;
+}
+.menu-bar a:hover {
+  color: #35c6b5;
+}
+
+.home-img-txt {
+  font-family: "Quicksand";
+  width: 60%;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+}
+.row img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-style: none;
+}
+
+/**/
+.photo-card {
+  border-style: solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: 5%;
+  margin-right: auto;
+}
+
+.photo-card {
+  flex-direction: row;
+}
+
+.photo-background {
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  min-height: 250px;
+}
+
+.photo-background {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  min-height: none;
+  width: 50%;
+}
+
+.photo-details {
+  padding: 2.1875em 5%;
+}
+
+.photo-details {
+  width: 100%;
+}
+
+.photo-details h1,
+.photo-details h4 {
+  margin: 0;
+}
+
+.photo-details h1 {
+  font-size: 125%;
+  line-height: 1;
+  margin-bottom: 0.35em;
+}
+
+/* FOOTER */
+#footer {
+  background: linear-gradient(rgba(255, 255, 255, 2), rgba(100, 0, 0, 0.1));
+  padding: 40px 100px 40px 100px;
+  height: auto;
+  font-size: 14px;
+}
+
+#footer a {
+  text-decoration: none;
+  color: black !important;
+}
+
+.head {
+  margin-left: 10%;
+  margin-top: 30px;
+}
